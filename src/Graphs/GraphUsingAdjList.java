@@ -5,6 +5,15 @@ import java.util.*;
 public class GraphUsingAdjList {
 
     int V;
+
+    public int getV() {
+        return V;
+    }
+
+    public List<Integer>[] getAdjList() {
+        return adjList;
+    }
+
     List<Integer> adjList[];
 
     GraphUsingAdjList(int V){
