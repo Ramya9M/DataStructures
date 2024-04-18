@@ -22,18 +22,27 @@ public class GraphMain {
 //        g2.addEdge(3, 3);
 //        System.out.println(g2);
 
-        GraphUsingAdjList g3 = new GraphUsingAdjList(6);
+        GraphUsingAdjList g3 = new GraphUsingAdjList(7);
         g3.addEdge(0,1,true);
-        g3.addEdge(1,2,true);
+        g3.addEdge(0,2,true);
         g3.addEdge(2,3,true);
-        g3.addEdge(3,4,true);
-        g3.addEdge(1,5,true);
+        g3.addEdge(3,6,true);
+        g3.addEdge(2,4,true);
+        g3.addEdge(4,6,true);
+        g3.addEdge(1,4,true);
+        g3.addEdge(4,5,true);
         System.out.println(g3);
 
 //        BFS bfs = new BFS();
 //        bfs.BFSSearch(4,0,g3);
 
-        DFS dfs = new DFS();
-        dfs.DFSSearch(0,6,g3);
+//        DFS dfs = new DFS();
+//        dfs.DFSSearch(0,6,g3);
+
+        DetectCycle detectCycle = new DetectCycle();
+        if(detectCycle.DetectCycleInGraph(0,g3,6))
+            System.out.println("true");
+        else
+            System.out.println("false");
     }
 }
