@@ -17,7 +17,19 @@ public class StringValidations {
 
     public static boolean containsSpecialCharacter(String input){
         Pattern special = Pattern.compile ("[!@#$%&*()_+=|<>?{}\\[\\]~-]");
-        Matcher hasSpecial = special.matcher("fd@d");
+        Matcher hasSpecial = special.matcher(input);
+        return hasSpecial.find();
+    }
+
+    public static boolean containsVowels(String input){
+        Pattern special = Pattern.compile ("[aeiouAEIOU]");
+        Matcher hasSpecial = special.matcher(input);
+        return hasSpecial.find();
+    }
+
+    public static boolean containsConsonants(String input){
+        Pattern special = Pattern.compile ("[bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ]");
+        Matcher hasSpecial = special.matcher(input);
         return hasSpecial.find();
     }
 
@@ -25,4 +37,7 @@ public class StringValidations {
         return input.chars().anyMatch(Character::isWhitespace);
     }
 
+    public static void main(String[] args){
+        System.out.println(containsConsonants("aaa"));
+    }
 }
