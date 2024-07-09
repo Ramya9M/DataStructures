@@ -16,17 +16,21 @@ public class flattenBinaryTree {
 
     public static void flattenBT(Node node){
 
-        Node prev = null;
-        if(node == null)
-            return;
+       Node curr = node;
 
-        flattenBT(node.left);
-        flattenBT(node.right);
+       while(curr != null){
+           if(curr.left != null){
+               Node prev = curr.left;
 
-        node.right = prev;
-        node.left  = null;
+               while(curr.right != null)
+                   prev = curr.right;
 
-        prev = node;
+               prev.right = curr.right;
+               curr.right = curr.left;
+               curr.left = null;
+           }
+           curr = curr.right;
+       }
 
     }
 
