@@ -14,7 +14,7 @@ public class DFS {
 
             int nbr = it.next();
             if(!visited[nbr])
-                DFSHelper(nbr,graphUsingAdjList,visited);
+                DFSHelper(nbr,graphUsingAdjList,visited );
         }
 
     }

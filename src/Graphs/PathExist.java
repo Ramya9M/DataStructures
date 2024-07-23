@@ -71,7 +71,7 @@ public class PathExist {
 
             for(int i=0; i<adj[n].size(); i++){
 
-                int w = adj[n].get(i).w;
+                int w  = adj[n].get(i).w;
                 int nd = adj[n].get(i).y;
 
                 if(w+d < dist[nd]) {

@@ -1,6 +1,5 @@
 package Sorting;
 
-
 import java.util.*;
 
 public class MergeSort {
@@ -17,12 +16,12 @@ public class MergeSort {
 
         while(p1<n && p2<m){
 
-            if(a1[p1] <= a2[p2]){
+            if(a1[p1] < a2[p2]){
                 ans[p3]=a1[p1];
                 p3++;
                 p1++;
             }
-            else if(a1[p1] > a2[p2]){
+            else {
                 ans[p3]=a2[p2];
                 p3++;
                 p2++;
@@ -38,6 +37,8 @@ public class MergeSort {
             p3++;
             p2++;
         }
+        for(int i : ans)
+            System.out.println(i + " ");
         return ans;
     }
     public static int[] mergeSortedArray(int[] a, int low, int mid, int high){
@@ -83,10 +84,12 @@ public class MergeSort {
     }
     public static void main(String args[]){
 
-        int[] a = new int[]{1,4,8,6};
-        MergeSort.mergeSort(a,0,3);
-        for(int i : a)
-            System.out.println(i);
+        int[] a = new int[]{1,4,8,6,9};
+        int[] b = new int[]{2,5,7,6};
+//        MergeSort.mergeSort(a,0,3);
+//        for(int i : a)
+//            System.out.println(i);
+        mergeTwoSortedArray(a,b);
     }
 
 }
